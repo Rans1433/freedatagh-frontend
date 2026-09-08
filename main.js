@@ -273,46 +273,48 @@ console.log("Phone:", num);
         const result = await response.json();
         
         console.log("Verification result:", result);
-        
         if (result.success) {
-          
-          console.log("Payment verified by backend");
-          
-          const now = new Date();
-          
-          const neworder = {
-            amount: selected.amount,
-            price: selected.price,
-            num: num,
-            date: now.toLocaleDateString(),
-            status: "paid",
-            reference: transaction.reference
-          };
-          
-          orders.push(neworder);
-          
-          localStorage.setItem(
-            "orders",
-            JSON.stringify(orders)
-          );
-          
-          show("orders");
-          
-          displayorder();
-          
-          alert(
-            "Payment verified successfully!\nReference: " +
-            transaction.reference
-          );
-          
-        } else {
-          
-          alert(
-            "Payment could not be verified.\n" +
-            result.message
-          );
-          
-        }
+  
+  console.log("Payment verified by backend");
+  
+  const now = new Date();
+  
+  const neworder = {
+    amount: selected.amount,
+    price: selected.price,
+    num: num,
+    date: now.toLocaleDateString(),
+    status: "paid",
+    reference: transaction.reference
+  };
+  
+  orders.push(neworder);
+  
+  localStorage.setItem(
+    "orders",
+    JSON.stringify(orders)
+  );
+  
+  show("orders");
+  
+  displayorder();
+  
+  alert(
+    "Payment verified successfully!\n" +
+    "Reference: " +
+    transaction.reference
+  );
+  
+} else {
+  
+  alert(
+    "Payment could not be verified.\n" +
+    result.message +
+    "\n" +
+    JSON.stringify(result.details)
+  );
+  
+}
         
       } catch (error) {
         
@@ -325,7 +327,7 @@ console.log("Phone:", num);
       }
       
     }
-    
+     
   });
   
 }
