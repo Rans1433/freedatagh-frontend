@@ -476,9 +476,188 @@ nav .nav-bar{
   .comments-page {
     flex-direction: column;
   }
+
   
   .comment-container {
     width: 100%;
   }
   
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer {
+  background: #111;
+  color: #fff;
+  margin-top: 4rem;
+  border-top: 1px solid #292929;
+}
+
+.footer-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 3rem 2rem;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+}
+
+
+/* BRAND */
+
+.footer-brand h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.footer-brand h2 span {
+  color: #ffbb00;
+}
+
+.footer-brand p {
+  color: #858585;
+  max-width: 350px;
+  line-height: 1.6;
+}
+
+
+/* FOOTER HEADINGS */
+
+.footer-links h3,
+.footer-contact h3 {
+  color: #ffbb00;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+
+/* QUICK LINKS */
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-links button {
+  background: transparent;
+  border: none;
+  outline: none;
+
+  color: #858585;
+  font-size: 0.95rem;
+
+  padding: 0.4rem 0;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.footer-links button:hover {
+  color: #ffbb00;
+  transform: translateX(5px);
+}
+
+
+/* CONTACT */
+
+.footer-contact p {
+  color: #858585;
+  margin-bottom: 0.4rem;
+}
+
+.footer-contact a {
+  color: #ffbb00;
+  text-decoration: none;
+  font-weight: 700;
+
+  transition: all 0.3s ease;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+
+.footer-location {
+  margin-top: 1rem;
+}
+
+
+/* LINE */
+
+.footer-line {
+  height: 1px;
+  width: 90%;
+  margin: auto;
+  background: #292929;
+}
+
+
+/* BOTTOM */
+
+.footer-bottom {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+
+  padding: 1.5rem 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 1rem;
+}
+
+.footer-bottom p {
+  color: #686868;
+  font-size: 0.85rem;
+}
+
+.footer-bottom span {
+  color: #ffbb00;
+  font-weight: 900;
+}
+
+
+/* =========================
+   FOOTER MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .site-footer {
+    margin-top: 3rem;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .footer-brand {
+    text-align: center;
+  }
+
+  .footer-brand p {
+    margin: auto;
+  }
+
+  .footer-links,
+  .footer-contact {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+
 }
